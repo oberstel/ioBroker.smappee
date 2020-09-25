@@ -917,10 +917,10 @@ function getsmappeedata(topicarray, messageJ) {
         if (topicarray[4] == "state") {
           var s = new Date(messageJ.since);
           adapter.setState('Servicelocations.' + topicarray[1] + '.plug.' + topicarray[3] + ".statesince", s.toLocaleString(), true);
-            if (messageJ.value='ON') {
+            if (messageJ.value=='ON') {
               adapter.setState('Servicelocations.' + topicarray[1] + '.plug.' + topicarray[3] + ".state", 1, true);
             }
-            if (messageJ.value='OFF') {
+            if (messageJ.value=='OFF') {
               adapter.setState('Servicelocations.' + topicarray[1] + '.plug.' + topicarray[3] + ".state", 0, true);
             }
         } else if (topicarray[4] == "connectionState") {
