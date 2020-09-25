@@ -1,8 +1,12 @@
 {
   "common": {
     "name": "smappee",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "news": {
+      "0.2.3": {
+        "en": "changed the behavior of plug.x.state from ON/OFF to 1/0 to be able to process the state in VIS",
+        "de": "geändertes Verhalten von plug.x.state um den Status als 1/0 anstelle von ON/OFF zu setzen, um dies in VIS weiter verarbeiten zu können",
+      }, 
       "0.2.2": {
         "en": "Readme - update.",
         "de": "Readme - update."
