@@ -630,7 +630,10 @@ function getsmappeeconfig(topicarray, messageJ) {
             common: {
               name: 'reported state',
               desc: 'State smart plug',
-              type: 'string',
+              type: 'number',
+              min: 0,
+              max: 1,
+              def: 0,
               role: "info.state",
               read: true,
               write: false
@@ -680,8 +683,11 @@ function getsmappeeconfig(topicarray, messageJ) {
             common: {
               name: 'reported state',
               desc: 'State smart plug',
-              type: 'string',
-              role: "info.state",
+              type: 'number',
+              min: 0,
+              max: 1,
+              def: 0,
+              role: "info",
               read: true,
               write: false
             },
@@ -911,7 +917,12 @@ function getsmappeedata(topicarray, messageJ) {
         if (topicarray[4] == "state") {
           var s = new Date(messageJ.since);
           adapter.setState('Servicelocations.' + topicarray[1] + '.plug.' + topicarray[3] + ".statesince", s.toLocaleString(), true);
-          adapter.setState('Servicelocations.' + topicarray[1] + '.plug.' + topicarray[3] + ".state", messageJ.value, true);
+            if (messageJ.value='ON') {
+              adapter.setState('Servicelocations.' + topicarray[1] + '.plug.' + topicarray[3] + ".state", 1, true);
+            }
+            if (messageJ.value='OFF') {
+              adapter.setState('Servicelocations.' + topicarray[1] + '.plug.' + topicarray[3] + ".state", 0, true);
+            }
         } else if (topicarray[4] == "connectionState") {
           var s = new Date(messageJ.since);
           adapter.setState('Servicelocations.' + topicarray[1] + '.plug.' + topicarray[3] + ".connstatesince", s.toLocaleString(), true);
