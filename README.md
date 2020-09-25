@@ -72,7 +72,7 @@ Smappee allows you to remotly control smart plugs / smart switches. Either smapp
 ## Changelog
 
 ### 0.2.3
--   changed the behavior of plug.x.state from ON / OFF to TRUE / FALSE to be able to process the state in VIS
+-   changed the behavior of plug.x.state from ON/OFF to 1/0 to be able to process the state in VIS
 
 ### 0.2.2
 
